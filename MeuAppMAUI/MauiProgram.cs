@@ -23,9 +23,13 @@ public static class MauiProgram
 
 		// Register ViewModels
 		builder.Services.AddTransient<MainViewModel>();
+		builder.Services.AddTransient<SettingsViewModel>();
+		builder.Services.AddTransient<DetailViewModel>();
 
 		// Register Views
 		builder.Services.AddTransient<MainPage>();
+		builder.Services.AddTransient<SettingsPage>();
+		builder.Services.AddTransient<DetailPage>();
 
 		// Register Services
 		// builder.Services.AddSingleton<IMyService, MyService>();

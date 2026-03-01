@@ -24,5 +24,23 @@ public partial class MainViewModel : BaseViewModel
             ? $"Clicked {_count} time"
             : $"Clicked {_count} times";
     }
+
+    /// <summary>
+    /// Navigate to <c>DetailPage</c> passing query parameters.
+    /// The route "details" is registered in <see cref="AppShell"/>.
+    /// </summary>
+    [RelayCommand]
+    private async Task NavigateToDetail()
+    {
+        // Pass simple values as query-string parameters.
+        // Received by DetailViewModel via IQueryAttributable.
+        var parameters = new ShellNavigationQueryParameters
+        {
+            { "id", _count.ToString() },
+            { "description", $"You clicked the button {_count} time(s)." }
+        };
+
+        await Shell.Current.GoToAsync("details", parameters);
+    }
 }
 

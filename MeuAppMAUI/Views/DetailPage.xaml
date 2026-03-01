@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MeuAppMAUI.ViewModels"
+             x:DataType="vm:DetailViewModel"
+             x:Class="MeuAppMAUI.Views.DetailPage"
+             Title="{Binding Title}">
+
+    <Grid RowDefinitions="*,Auto" Padding="20">
+
+        <VerticalStackLayout Grid.Row="0" Spacing="16">
+
+            <Border Padding="16" StrokeShape="RoundRectangle 8">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Item ID"
+                           FontAttributes="Bold"
+                           FontSize="13"
+                           TextColor="{AppThemeBinding Light={StaticResource Gray600}, Dark={StaticResource Gray400}}" />
+                    <Label Text="{Binding ItemId}"
+                           FontSize="20"
+                           FontAttributes="Bold" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Padding="16" StrokeShape="RoundRectangle 8">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Description"
+                           FontAttributes="Bold"
+                           FontSize="13"
+                           TextColor="{AppThemeBinding Light={StaticResource Gray600}, Dark={StaticResource Gray400}}" />
+                    <Label Text="{Binding ItemDescription}"
+                           FontSize="16" />
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+
+        <Button Grid.Row="1"
+                Text="Go Back"
+                Command="{Binding GoBackCommand}"
+                Margin="0,16,0,0" />
+
+    </Grid>
+
+</ContentPage>

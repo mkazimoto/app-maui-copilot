@@ -6,9 +6,22 @@
     xmlns:views="clr-namespace:MeuAppMAUI.Views"
     Title="MeuAppMAUI">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate views:MainPage}"
-        Route="MainPage" />
+    <!--
+        TabBar produces a bottom tab bar with no flyout entry.
+        Each ShellContent is lazy-loaded via ContentTemplate.
+    -->
+    <TabBar>
+        <ShellContent
+            Title="Home"
+            Icon="home.png"
+            ContentTemplate="{DataTemplate views:MainPage}"
+            Route="MainPage" />
+
+        <ShellContent
+            Title="Settings"
+            Icon="settings.png"
+            ContentTemplate="{DataTemplate views:SettingsPage}"
+            Route="SettingsPage" />
+    </TabBar>
 
 </Shell>
