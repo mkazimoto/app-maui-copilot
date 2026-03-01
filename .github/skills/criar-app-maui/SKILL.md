@@ -10,11 +10,18 @@ description: Cria um novo projeto MAUI com configuração básica.
 dotnet new maui -n [ProjectName]
 ```
 
+* Centralize as versões do .NET e do MAUI em `Directory.Build.props` para fácil manutenção:
+```
+<Project>
+  <PropertyGroup>
+    <NetVersion>10.0</NetVersion>
+    <MauiVersion>10.0.41</MauiVersion>
+  </PropertyGroup>
+</Project>
+
 * Altere o target framework para Net (testes unitários), Android e iOS:
 ```
 <!-- Defina a versão base do .NET -->
-<NetVersion>10.0</NetVersion>
-<MauiVersion>10.0.41</MauiVersion>
 <TargetFrameworks>net$(NetVersion);net$(NetVersion)-android;net$(NetVersion)-ios</TargetFrameworks>
 ```
 

@@ -1,9 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<!-- Defina a versão base do .NET -->
-		<NetVersion>10.0</NetVersion>
-		<MauiVersion>10.0.41</MauiVersion>
 		<TargetFrameworks>net$(NetVersion);net$(NetVersion)-android;net$(NetVersion)-ios</TargetFrameworks>
 
 		<OutputType Condition="'$(TargetFramework)' == 'net10.0'">Library</OutputType>
