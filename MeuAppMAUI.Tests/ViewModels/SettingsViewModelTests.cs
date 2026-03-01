@@ -81,4 +81,39 @@ public class SettingsViewModelTests
         Assert.False(vm.IsNotBusy);
         Assert.Contains(nameof(vm.IsNotBusy), changedProperties);
     }
+
+    [Fact]
+    public void SelectedTheme_DefaultIsSystem()
+    {
+        var vm = new SettingsViewModel();
+        Assert.Equal("System", vm.SelectedTheme);
+    }
+
+    [Fact]
+    public void SelectedTheme_Set_RaisesPropertyChanged()
+    {
+        // Arrange
+        var vm = new SettingsViewModel();
+        var changedProperties = new List<string?>();
+        vm.PropertyChanged += (_, e) => changedProperties.Add(e.PropertyName);
+
+        // Act
+        vm.SelectedTheme = "Dark";
+
+        // Assert
+        Assert.Equal("Dark", vm.SelectedTheme);
+        Assert.Contains(nameof(vm.SelectedTheme), changedProperties);
+    }
+
+    [Theory]
+    [InlineData("Light", AppTheme.Light)]
+    [InlineData("Dark", AppTheme.Dark)]
+    [InlineData("System", AppTheme.Unspecified)]
+    [InlineData("Unknown", AppTheme.Unspecified)]
+    public void ApplyTheme_NullApplication_DoesNotThrow(string theme, AppTheme _)
+    {
+        // Application.Current is null in unit tests — ApplyTheme must guard against this
+        var ex = Record.Exception(() => SettingsViewModel.ApplyTheme(theme));
+        Assert.Null(ex);
+    }
 }

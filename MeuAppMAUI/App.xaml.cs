@@ -1,4 +1,6 @@
-﻿namespace MeuAppMAUI;
+﻿using MeuAppMAUI.ViewModels;
+
+namespace MeuAppMAUI;
 
 public partial class App : Application
 {
@@ -7,6 +9,11 @@ public partial class App : Application
 	public App(IServiceProvider services)
 	{
 		_services = services;
+
+		// Restore saved theme before UI is created
+		var savedTheme = Preferences.Default.Get("selected_theme", "System");
+		SettingsViewModel.ApplyTheme(savedTheme);
+
 		InitializeComponent();
 	}
 

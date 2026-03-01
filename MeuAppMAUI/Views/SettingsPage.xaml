@@ -44,6 +44,29 @@
                     </Picker>
                 </Grid>
             </Border>
+
+            <!-- Theme picker -->
+            <Border Padding="16" StrokeShape="RoundRectangle 8">
+                <Grid ColumnDefinitions="*,Auto">
+                    <VerticalStackLayout>
+                        <Label Text="Theme"
+                               FontAttributes="Bold"
+                               FontSize="16" />
+                        <Label Text="Choose light, dark, or follow system"
+                               FontSize="13"
+                               TextColor="{AppThemeBinding Light={StaticResource Gray600}, Dark={StaticResource Gray400}}" />
+                    </VerticalStackLayout>
+                    <Picker Grid.Column="1"
+                            SelectedItem="{Binding SelectedTheme}"
+                            VerticalOptions="Center">
+                        <Picker.Items>
+                            <x:String>System</x:String>
+                            <x:String>Light</x:String>
+                            <x:String>Dark</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </Grid>
+            </Border>
         </VerticalStackLayout>
 
         <!-- Save button pinned to bottom -->

@@ -18,10 +18,10 @@ dotnet new maui -n [ProjectName]
     <MauiVersion>10.0.41</MauiVersion>
   </PropertyGroup>
 </Project>
+```
 
 * Altere o target framework para Net (testes unitários), Android e iOS:
 ```
-<!-- Defina a versão base do .NET -->
 <TargetFrameworks>net$(NetVersion);net$(NetVersion)-android;net$(NetVersion)-ios</TargetFrameworks>
 ```
 
