@@ -1,7 +1,0 @@
-C:\git\app-maui-copilot\MeuAppMAUI\obj\Debug\net10.0\MeuAppMAUI.csproj.AssemblyReference.cache
-C:\git\app-maui-copilot\MeuAppMAUI\obj\Debug\net10.0\MeuAppMAUI.Resources.Strings.AppResources.resources
-C:\git\app-maui-copilot\MeuAppMAUI\obj\Debug\net10.0\MeuAppMAUI.csproj.GenerateResource.cache
-C:\git\app-maui-copilot\MeuAppMAUI\obj\Debug\net10.0\MeuAppMAUI.GeneratedMSBuildEditorConfig.editorconfig
-C:\git\app-maui-copilot\MeuAppMAUI\obj\Debug\net10.0\MeuAppMAUI.AssemblyInfoInputs.cache
-C:\git\app-maui-copilot\MeuAppMAUI\obj\Debug\net10.0\MeuAppMAUI.AssemblyInfo.cs
-C:\git\app-maui-copilot\MeuAppMAUI\obj\Debug\net10.0\MeuAppMAUI.csproj.CoreCompileInputs.cache
