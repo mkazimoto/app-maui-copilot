@@ -1,7 +1,5 @@
 .vs/
 TestResults/*
-/bin/
-/obj/
 **/bin/**
 **/obj/**
 **/.vs

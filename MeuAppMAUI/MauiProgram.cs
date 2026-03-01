@@ -26,6 +26,9 @@ public static class MauiProgram
 		builder.Services.AddTransient<SettingsViewModel>();
 		builder.Services.AddTransient<DetailViewModel>();
 
+		// Register Shell
+		builder.Services.AddSingleton<AppShell>();
+
 		// Register Views
 		builder.Services.AddTransient<MainPage>();
 		builder.Services.AddTransient<SettingsPage>();
